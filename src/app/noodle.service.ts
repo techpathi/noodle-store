@@ -11,7 +11,7 @@ export class NoodleService {
 
   NOODLEAPIURL = 'https://s3-ap-southeast-1.amazonaws.com/he-public-data/TopRamen8d30951.json';
 
-  NOODLEIMAGEAPIURL = 'http://s3-ap-southeast-1.amazonaws.com/he-public-data/noodlesec253ad.json';
+  NOODLEIMAGEAPIURL = 'https://s3-ap-southeast-1.amazonaws.com/he-public-data/noodlesec253ad.json';
 
   constructor(private httpClient: HttpClient) { }
 
