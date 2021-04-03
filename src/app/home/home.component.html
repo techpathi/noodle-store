@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row" style="margin-bottom: 15px">
+    <div class="col-4">
+      <p class="text-start fs-5">The yummy ever noodles in the town...</p>
+    </div>
+    <div class="col-4">
+      <input
+        style="text-align: center"
+        class="form-control"
+        type="text"
+        name="search"
+        [(ngModel)]="searchTerm"
+        autocomplete="off"
+        placeholder="Search"
+      />
+    </div>
+    <div class="col-4">
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Sort by rating
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" (click)="sortByRating(0)">None</a>
+          <a class="dropdown-item" (click)="sortByRating(5)"
+            >Highest to lowest</a
+          >
+          <a class="dropdown-item" (click)="sortByRating(1)"
+            >Lowest to highest</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+    <ng-container
+      *ngFor="let noodle of allNoodles | filter: searchTerm; let i = index"
+    >
+      <div class="card noodle-card" fxFlex="0 1 calc(33.3% - 32px)">
+        <img
+          class="card-img-top noodle-image"
+          src="{{ imagesToDisplay[i] }}"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h4 class="card-title">
+            <i class="fa fa-spoon" aria-hidden="true"> {{ noodle.Variety }}</i>
+          </h4>
+          <a
+            class="btn btn-outline-success"
+            routerLink="/{{ i }}"
+            (click)="setThisNoodleData(noodle)"
+          >
+            Know more</a
+          >
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

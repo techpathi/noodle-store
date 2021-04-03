@@ -1,0 +1,19 @@
+.noodle-card {
+  max-width: 400px;
+  margin-bottom: 32px;
+}
+
+.noodle-image {
+  width: auto;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: medium;
+  word-wrap: break-word;
+}
+
+.list-group-item {
+  font-size: medium;
+}
